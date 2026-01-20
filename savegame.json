@@ -14,7 +14,9 @@
         "description": "This Long,narrow passage is lined with cobweb-covered portraits.The marbleends here,replaced by rough wood. An exit leads back east",
         "exits": {
             "east": "foyer",
-            "north": "libary"
+            "north": "libary",
+            "south": "kitchen",
+            "west": "staircase"
         },
         "items": [
             {
@@ -43,10 +45,46 @@
                 "can_be_picked_up": true
             },
             {
-                "name": "hidden key",
-                "description": "A small brass key, warm from being hidden in the book. A tiny engraving of a desk drawer is etched into its bow.",
+                "name": "libary key",
+                "description": "A small brass key, A tiny engraving of a desk drawer is etched into its bow.",
                 "can_be_picked_up": true
             }
         ]
+    },
+    "kitchen": {
+        "id": "kitchen",
+        "name": "kitchen",
+        "description": "A large kitchen with pots and pans hanging from the ceiling. A long wooden table sits in the center of the room.The smell of old food lingers in the air.",
+        "exits": {
+            "north": "hallway"
+        },
+        "items": [
+            {
+                "name": "Rusty Knife",
+                "description": "An old knife with a rusty blade. It looks sharp enough to cut through something soft.",
+                "can_be_picked_up": true
+            },
+            {
+                "name": "Stale Bread",
+                "description": "A loaf of bread that has gone stale. It is hard and dry to the touch.",
+                "can_be_picked_up": true
+            }
+        ]
+    },
+    "staircase": {
+        "id": "staircase",
+        "name": "grand staircase",
+        "description": "A grand staircase leading to the upper floors of the house. The steps creak underfoot.",
+        "exits": {
+            "east": "hallway"
+        }
+    },
+    "second_hallway": {
+        "id": "second_hallway",
+        "name": "Upstairs hallway",
+        "description": "A narrow hallway with doors on either side. The walls are lined with old portraits.",
+        "exits": {
+            "west": "staircase"
+        }
     }
 }

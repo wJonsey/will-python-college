@@ -31,7 +31,21 @@ item_key_libary={
     'description':'A small brass key, A tiny engraving of a desk drawer is etched into its bow.',
     'can_be_picked_up':True
 }
-
+item_knife={
+    'name':'Rusty Knife',
+    'description':'An old knife with a rusty blade. It looks sharp enough to cut through something soft.',
+    'can_be_picked_up':True
+}
+item_bread={
+    'name':'Stale Bread',
+    'description':'A loaf of bread that has gone stale. It is hard and dry to the touch.',
+    'can_be_picked_up':True
+}
+item_painting={
+    'name':'Faded Painting',
+    'description':'An old painting of a landscape. The colors have faded over time, but you can still make out the details.',
+    'can_be_picked_up':False
+}
 #Original room 
 room_foyer={
     'id':'foyer',
@@ -40,6 +54,7 @@ room_foyer={
     'exits':{},
     'items':[]
     }
+
 #Hallway
 room_hallway={
     'id':'hallway',
@@ -58,19 +73,42 @@ room_libary = {
     'exits':{},
     'items':[]
 }
-
+room_kitchen={
+    'id':'kitchen',
+    'name':'kitchen',
+    'description':'A large kitchen with pots and pans hanging from the ceiling. A long wooden table sits in the center of the room.'
+    'The smell of old food lingers in the air.',
+    'exits':{},
+    'items':[]
+}
+room_staircase={
+    'id':'staircase',
+    'name':'grand staircase',
+    'description':'A grand staircase leading to the upper floors of the house. The steps creak underfoot.',
+    'exits':{}, 
+}
+room_second_hallway={
+    'id':'second_hallway',
+    'name':'Upstairs hallway',
+    'description':'A narrow hallway with doors on either side. The walls are lined with old portraits.',
+    'exits':{},
+}
 
 
 
 #Global State
-WORLD = {'foyer':room_foyer, 'hallway':room_hallway, 'libary':room_libary}
+WORLD = {'foyer':room_foyer, 'hallway':room_hallway, 'libary':room_libary, 'kitchen':room_kitchen,'staircase':room_staircase,'second_hallway':room_second_hallway}
 PLAYER_INVENTORY = [item_key]
 CURRENT_ROOM_ID = 'foyer'
 
 #Connecting Rooms
 WORLD['foyer']['exits']={'west':'hallway'}
-WORLD['hallway']['exits']={'east':'foyer','north':'libary'}
+WORLD['hallway']['exits']={'east':'foyer','north':'libary','south':'kitchen','west':'staircase'}
 WORLD['libary']['exits']={'south':'hallway'}
+WORLD['kitchen']['exits']={'north':'hallway'}
+WORLD['staircase']['exits']={'east':'hallway'}
+WORLD['second_hallway']['exits']={'west':'staircase'}
+
 
 #Placing items 
 item_map = {'name': "Old Map", 'description': 'A crinkled piece of parchment.', 'can_be_picked_up': True} 
@@ -80,6 +118,9 @@ WORLD['hallway']['items'].append(item_heavystatue)
 WORLD['libary']['items']=[]
 WORLD['libary']['items'].append(item_book_unforgetting)
 WORLD['libary']['items'].append(item_key_libary)
+WORLD['kitchen']['items']=[]
+WORLD['kitchen']['items'].append(item_knife)
+WORLD['kitchen']['items'].append(item_bread)
 
 
 #code to say where you are
