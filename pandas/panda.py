@@ -11,7 +11,6 @@ def menu():
         choice = input()
         if choice.isdigit() and int(choice) == 1:
             print("Select one of the following currency conversion options:")
-
             print("1. Pound Sterling (GBP) to Euros (EUR)")
             print("2. Euros (EUR) to Pound Sterling (GBP)")
             print("3. Pound (GBP) to Australian Dollars (AUD)")
@@ -24,10 +23,11 @@ def menu():
             choice = input()
             return choice
         elif choice.isdigit() and int(choice) == 2:
-            print("do the comparison")
+            
        
         elif choice.isdigit() and int(choice) == 3:
-            print("do the comparison")
+
+        
         else:
             print("Sorry, you did not enter a valid choice")
  
@@ -64,7 +64,7 @@ def perform_conversion(amount, rate, currency):
     print(f"You are converting {amount} {currency[:3]}")
     print(f"You will receive {received} {currency[-3:]}")
     print()
-    a=input("Do you wish to continue (Y/N) : ")
+    a = input("Do you wish to continue (Y/N) : ")
     return a
  
 while True:
@@ -72,7 +72,7 @@ while True:
     currency = get_currency(menu_choice)
     rate = get_conversion_rate(currency)
     amount = get_amount_to_convert()
-    ab=perform_conversion(amount, rate, currency)
-    if ab=='N':
+    ab = perform_conversion(amount, rate, currency)
+    if ab == 'N':
         print("Thank you for using the services of RBSX Group Ltd")
         break
